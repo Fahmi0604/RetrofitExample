@@ -3,26 +3,35 @@ package com.example.retrofitexample;
 import com.google.gson.annotations.SerializedName;
 
 public class Post {
-    private int userId;
-    private int id;
-    private String title;
 
-    @SerializedName("body")
-    private String text;
+    private String name;
 
-    public int getUserId() {
-        return userId;
+    @SerializedName("name_translations")
+    private Quran_nameTranslation quran_nameTranslation;
+    
+    private int number_of_surah;
+    private int number_of_ayah;
+
+    @SerializedName("type")
+    private String tipe_ayat;
+
+    public int getNumber_of_surah() {
+        return number_of_surah;
     }
 
-    public int getId() {
-        return id;
+    public int getNumber_of_ayah() {
+        return number_of_ayah;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public String getText() {
-        return text;
+    public String getType() {
+        return tipe_ayat;
+    }
+
+    public Quran_nameTranslation getQuran_nameTranslation() {
+        return quran_nameTranslation;
     }
 }

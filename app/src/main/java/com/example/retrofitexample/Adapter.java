@@ -32,13 +32,18 @@ public class Adapter extends RecyclerView.Adapter<Adapter.AdapterViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull AdapterViewHolder holder, int position) {
         final Post post = postList.get(position);
-        int id = post.getUserId();
-        String title = post.getTitle();
-        String text = post.getText();
+        String name = post.getName();
+        String arti = post.getQuran_nameTranslation().getArab();
+        int noSurah = post.getNumber_of_surah();
+        int noAyah = post.getNumber_of_ayah();
+        String type = post.getType();
 
-        holder.txt_userId.setText(String.valueOf(id));
-        holder.txt_title.setText(title);
-        holder.txt_text.setText(text);
+
+        holder.txt_name.setText(name);
+        holder.txt_arti.setText(arti);
+        holder.txt_noSurat.setText(String.valueOf(noSurah));
+        holder.txt_noAyat.setText(String.valueOf(noAyah));
+        holder.txt_type.setText(type);
     }
 
     @Override
@@ -48,13 +53,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.AdapterViewHolder> {
 
     public class AdapterViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView txt_userId, txt_title, txt_text;
+        private TextView txt_name, txt_noSurat, txt_noAyat, txt_type, txt_arti;
 
         public AdapterViewHolder(@NonNull View itemView) {
             super(itemView);
-            txt_userId = itemView.findViewById(R.id.txt_userId);
-            txt_title = itemView.findViewById(R.id.txt_title);
-            txt_text = itemView.findViewById(R.id.txt_text);
+            txt_name = itemView.findViewById(R.id.txt_name);
+            txt_arti = itemView.findViewById(R.id.txt_arti);
+            txt_noSurat = itemView.findViewById(R.id.txt_noSurat);
+            txt_noAyat = itemView.findViewById(R.id.txt_noAyat);
+            txt_type = itemView.findViewById(R.id.txt_type);
         }
     }
 }

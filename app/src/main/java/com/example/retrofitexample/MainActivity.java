@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com/")
+                .baseUrl("https://raw.githubusercontent.com/penggguna/QuranJSON/master/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
